@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>angular-sparklines</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic">
+</head>
+
+<body ng-app="webapp" ng-controller="AppController as app">
+  <!--[if lt IE 8]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="container">
+    <md-toolbar layout>
+      <div class="md-toolbar-tools">
+        <h3>angular-sparklines</h3>
+      </div>
+    </md-toolbar>
+
+    <div layout layout-padding layout-align="center center">
+      <md-content class="sj-card" flex="20" layout layout-padding>
+        <div flex class="sj-card--chart">
+          <sparklines type="line"
+          data="app.data"
+          options="app.line.options"></sparklines>
+        </div>
+        <div flex class="sj-card--content">
+          <small class="md-caption">CPU</small>
+          <h1 class="md-headline" ng-bind="app.cpu1 + '%'"></h1>
+        </div>
+      </md-content>
+    </div>
+    <div layout="row" layout-padding layout-align="center center">
+      <md-content class="sj-card" flex="20" layout layout-padding
+      ng-class="{'sj-card__warn': app.cpu2 > 50 && app.cpu2 <=70, 'sj-card__error': app.cpu2 > 70,
+      'sj-card__success': app.cpu2 <= 50}">
+        <div flex class="sj-card--chart">
+          <sparklines type="line"
+          data="app.data"
+          options="app.line.options"></sparklines>
+        </div>
+        <div flex class="sj-card--content">
+          <small class="md-caption">CPU</small>
+          <h1 class="md-headline" ng-bind="app.cpu2 + '%'"></h1>
+        </div>
+      </md-content>
+    </div>
+    <div layout="row" layout-padding layout-align="center center">
+      <md-content class="sj-card" flex="20" layout layout-padding
+      ng-class="{'sj-card__warn': app.cpu3 > 50 && app.cpu3 <=70, 'sj-card__error': app.cpu3 > 70,
+      'sj-card__success': app.cpu3 <= 50}">
+        <div flex class="sj-card--chart">
+          <sparklines type="line"
+          data="app.data"
+          options="app.line.options"></sparklines>
+        </div>
+        <div flex class="sj-card--content">
+          <small class="md-caption">CPU</small>
+          <h1 class="md-headline" ng-bind="app.cpu3 + '%'"></h1>
+        </div>
+      </md-content>
+    </div>
+    <div layout="row" layout-padding layout-align="center center">
+      <md-content class="sj-card" flex="20" layout layout-padding
+      ng-class="{'sj-card__warn': app.cpu4 > 50 && app.cpu4 <=70, 'sj-card__error': app.cpu4 > 70,
+      'sj-card__success': app.cpu4 <= 50}">
+        <div flex class="sj-card--chart">
+          <sparklines type="line"
+          data="app.data"
+          options="app.line.options"></sparklines>
+        </div>
+        <div flex class="sj-card--content">
+          <small class="md-caption">CPU</small>
+          <h1 class="md-headline" ng-bind="app.cpu4 + '%'"></h1>
+        </div>
+      </md-content>
+    </div>
+  </div>
+
+</body>
+
+</html>
