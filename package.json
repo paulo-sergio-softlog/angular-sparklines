@@ -1,6 +1,5 @@
 {
   "name": "angular-sparklines",
-  "version": "0.0.0-semantic-released",
   "main": "index",
   "config": {
     "ghooks": {
